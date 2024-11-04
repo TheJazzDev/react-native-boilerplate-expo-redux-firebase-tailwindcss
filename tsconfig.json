@@ -1,0 +1,27 @@
+{
+  "extends": "expo/tsconfig.base",
+  "compilerOptions": {
+    "strict": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "esModuleInterop": true,
+    "baseUrl": "./",
+    "paths": {
+      "~/utils/*": ["./src/utils/*"],
+      "~/theme/*": ["./src/theme/*"],
+      "~/hooks/*": ["./src/hooks/*"],
+      "~/redux/*": ["./src/redux/*"],
+      "~/assets/*": ["./src/assets/*"],
+      "~/config/*": ["./src/config/*"],
+      "~/constants/*": ["./src/constants/*"],
+      "~/components/*": ["./src/components/*"],
+    }
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    ".expo/types/**/*.ts",
+    "expo-env.d.ts",
+    "nativewind-env.d.ts"
+  ]
+}
