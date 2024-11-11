@@ -3,12 +3,13 @@ import {
   DefaultTheme,
   ThemeProvider,
 } from '@react-navigation/native';
-import { Stack } from 'expo-router';
 import { useColorScheme } from 'src/hooks';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { Provider } from 'react-redux';
-import { store, rrfProps, useUserSlice } from 'src/redux';
+import { store } from 'src/redux';
 import { supressError } from 'src/utils';
+import ProtectedRoute from 'src/Auth/ProtectedRoute';
+import { Slot } from 'expo-router';
 
 export function RootLayoutNav() {
   const colorScheme = useColorScheme();
@@ -17,18 +18,14 @@ export function RootLayoutNav() {
 
   return (
     <Provider store={store}>
-      {/* <ReactReduxFirebaseProvider {...rrfProps}> */}
       <GestureHandlerRootView style={{ flex: 1 }}>
         <ThemeProvider
           value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}
         >
-          <Stack>
-            <Stack.Screen name="(auth)" options={{ headerShown: false }} />
-            <Stack.Screen name="(drawer)" options={{ headerShown: false }} />
-          </Stack>
+          <Slot />
+          <ProtectedRoute />
         </ThemeProvider>
       </GestureHandlerRootView>
-      {/* </ReactReduxFirebaseProvider> */}
     </Provider>
   );
 }

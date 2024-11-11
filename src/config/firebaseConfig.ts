@@ -3,13 +3,13 @@ import { getAuth } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 
 export const config = {
-  apiKey: 'AIzaSyCemYseNEzSTot4o11aqfF4cLtFoVdrcB4',
-  authDomain: 'bup-27788.firebaseapp.com',
-  projectId: 'bup-27788',
-  storageBucket: 'bup-27788.firebasestorage.app',
-  messagingSenderId: '87409360636',
-  appId: '1:87409360636:web:a0f38839c5d69e48a4a179',
-  measurementId: 'G-LEG5E1TMTC',
+  apiKey: process.env.EXPO_PUBLIC_API_KEY,
+  authDomain: process.env.EXPO_PUBLIC_AUTH_DOMAIN,
+  projectId: process.env.EXPO_PUBLIC_PROJECT_ID,
+  storageBucket: process.env.EXPO_PUBLIC_STORAGE_BUCKET,
+  messagingSenderId: process.env.EXPO_PUBLIC_MESSAGING_SENDER_ID,
+  appId: process.env.EXPO_PUBLIC_APP_ID,
+  measurementId: process.env.EXPO_PUBLIC_MEASUREMENT_ID,
 };
 
 // Initialize Firebase only if there are no apps initialized already
