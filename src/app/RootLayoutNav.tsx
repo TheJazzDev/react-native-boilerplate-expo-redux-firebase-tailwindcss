@@ -8,7 +8,7 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { Provider } from 'react-redux';
 import { store } from 'src/redux';
 import { supressError } from 'src/utils';
-import ProtectedRoute from 'src/Auth/ProtectedRoute';
+import ProtectedRoute from 'src/auth/ProtectedRoute';
 import { Slot } from 'expo-router';
 
 export function RootLayoutNav() {
